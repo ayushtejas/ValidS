@@ -1,36 +1,85 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Next.js + shadcn/ui + Tailwind CSS
 
-## Getting Started
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app) and configured with [shadcn/ui](https://ui.shadcn.com/) and [Tailwind CSS](https://tailwindcss.com/).
+
+## 🚀 Getting Started
 
 First, run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🎨 Tech Stack
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Next.js 15.5.4** - React framework with App Router
+- **React 19** - Latest React version
+- **TypeScript** - Type safety
+- **Tailwind CSS v4** - Utility-first CSS framework
+- **shadcn/ui** - Re-usable components built with Radix UI and Tailwind CSS
 
-## Learn More
+## 📦 What's Included
 
-To learn more about Next.js, take a look at the following resources:
+- ✅ Next.js with App Router
+- ✅ TypeScript configuration
+- ✅ Tailwind CSS v4 setup
+- ✅ shadcn/ui components (Button component included)
+- ✅ ESLint configuration
+- ✅ Dark mode support (via system preference)
+- ✅ CSS variables for theming
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🧩 Adding More shadcn/ui Components
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+To add more shadcn/ui components to your project:
 
-## Deploy on Vercel
+```bash
+# Add a specific component
+npx shadcn@latest add [component-name]
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+# Examples:
+npx shadcn@latest add card
+npx shadcn@latest add input
+npx shadcn@latest add dialog
+npx shadcn@latest add dropdown-menu
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Browse all available components at [ui.shadcn.com](https://ui.shadcn.com/)
+
+## 📁 Project Structure
+
+```
+valids/
+├── src/
+│   ├── app/
+│   │   ├── globals.css       # Global styles with theme variables
+│   │   ├── layout.tsx         # Root layout
+│   │   └── page.tsx           # Home page with button examples
+│   ├── components/
+│   │   └── ui/                # shadcn/ui components
+│   │       └── button.tsx
+│   └── lib/
+│       └── utils.ts           # Utility functions (cn helper)
+├── components.json            # shadcn/ui configuration
+└── package.json
+```
+
+## 🎨 Customizing Theme
+
+The theme colors are defined in `src/app/globals.css` using CSS variables. You can customize the color scheme by modifying the `--color-*` variables in both light and dark mode sections.
+
+## 📚 Learn More
+
+To learn more about the technologies used:
+
+- [Next.js Documentation](https://nextjs.org/docs)
+- [shadcn/ui Documentation](https://ui.shadcn.com/)
+- [Tailwind CSS Documentation](https://tailwindcss.com/docs)
+- [Radix UI Documentation](https://www.radix-ui.com/)
+
+## 🚢 Deploy on Vercel
+
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new).
+
+Check out the [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
