@@ -39,6 +39,16 @@ EXPOSE 8000
 HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
     CMD python -c "import requests; requests.get('http://localhost:8000/health')" || exit 1
 
-# Run the application
-CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
+# Create startup script
+RUN echo '#!/bin/bash\n\
+echo "🚀 Starting ValidS Backend..."\n\
+echo "🔧 Initializing database..."\n\
+python init-db.py\n\
+echo "✅ Database initialization completed!"\n\
+echo "🚀 Starting FastAPI server..."\n\
+exec uvicorn app.main:app --host 0.0.0.0 --port 8000' > /app/start.sh && \
+chmod +x /app/start.sh
+
+# Run the application with initialization
+CMD ["/app/start.sh"]
 

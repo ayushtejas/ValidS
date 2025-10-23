@@ -4,7 +4,7 @@ import logging
 
 from app.core.config import settings
 from app.db.mongodb import connect_to_mongo, close_mongo_connection
-from app.api import items
+from app.api import items, users, companies, iso, controls, questions, fields, submissions, assignments, admin
 
 # Configure logging
 logging.basicConfig(
@@ -69,5 +69,59 @@ app.include_router(
     items.router,
     prefix=f"{settings.API_V1_PREFIX}/items",
     tags=["items"]
+)
+
+app.include_router(
+    users.router,
+    prefix=f"{settings.API_V1_PREFIX}/users",
+    tags=["users"]
+)
+
+app.include_router(
+    companies.router,
+    prefix=f"{settings.API_V1_PREFIX}/companies",
+    tags=["companies"]
+)
+
+app.include_router(
+    iso.router,
+    prefix=f"{settings.API_V1_PREFIX}/iso",
+    tags=["iso"]
+)
+
+app.include_router(
+    controls.router,
+    prefix=f"{settings.API_V1_PREFIX}/controls",
+    tags=["controls"]
+)
+
+app.include_router(
+    questions.router,
+    prefix=f"{settings.API_V1_PREFIX}/questions",
+    tags=["questions"]
+)
+
+app.include_router(
+    fields.router,
+    prefix=f"{settings.API_V1_PREFIX}/fields",
+    tags=["fields"]
+)
+
+app.include_router(
+    submissions.router,
+    prefix=f"{settings.API_V1_PREFIX}/submissions",
+    tags=["submissions"]
+)
+
+app.include_router(
+    assignments.router,
+    prefix=f"{settings.API_V1_PREFIX}/assignments",
+    tags=["assignments"]
+)
+
+app.include_router(
+    admin.router,
+    prefix=f"{settings.API_V1_PREFIX}/admin",
+    tags=["admin"]
 )
 
